@@ -1,0 +1,80 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F5F3F7;
+  color: #241E2E;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.paper-card {
+  background: #FFFFFF;
+  border: 1px solid #E4DEEC;
+  box-shadow: 0 1px 2px rgba(36, 30, 46, 0.05);
+}
+
+.accent-line {
+  background: repeating-linear-gradient(
+    90deg,
+    #6E4CAE,
+    #6E4CAE 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  height: 3px;
+}
+
+.bubble-user {
+  background: #6E4CAE;
+  color: white;
+  border-radius: 14px 14px 2px 14px;
+}
+
+.bubble-bot {
+  background: #F0ECF7;
+  color: #241E2E;
+  border-radius: 14px 14px 14px 2px;
+}
+
+.bubble-system {
+  background: transparent;
+  color: #8A8194;
+  font-style: italic;
+}
+
+#chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+#chat-scroll::-webkit-scrollbar-thumb {
+  background: #D8D0E6;
+  border-radius: 999px;
+}
+
+input:focus, button:focus, textarea:focus {
+  outline: 2px solid #6E4CAE;
+  outline-offset: 1px;
+}
+
+::selection {
+  background: #6E4CAE;
+  color: white;
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.pop-in {
+  animation: pop-in 0.18s ease-out;
+}
+
+.typing-dot {
+  animation: blink 1.2s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}

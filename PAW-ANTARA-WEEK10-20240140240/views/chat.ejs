@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body class="min-h-screen px-4 py-8">
+
+  <div class="max-w-lg mx-auto">
+
+    <header class="mb-5">
+      <div class="flex items-center gap-2 mb-1">
+        <div class="w-8 h-8 rounded-md bg-[#6E4CAE] text-white font-display font-bold flex items-center justify-center text-sm">AI</div>
+        <h1 class="font-display text-xl font-semibold">Chat with AI</h1>
+      </div>
+      <p class="text-sm text-[#8A8194] ml-10">Tanya-tanya soal produk toko, bot bakal bantu jawab.</p>
+    </header>
+
+    <div class="paper-card rounded-lg p-4 mb-4 flex items-start gap-3">
+      <input type="checkbox" id="save-history-toggle" class="mt-1 w-4 h-4 rounded border-[#C9BEDD] text-[#6E4CAE] focus:ring-[#6E4CAE] shrink-0" />
+      <label for="save-history-toggle" class="text-sm leading-relaxed cursor-pointer">
+        <span class="font-medium">Simpan riwayat percakapan saya</span>
+        <br />
+        <span class="text-[#8A8194]">Kalau dicentang, pesan kamu & balasan bot bakal disimpan di server dan muncul lagi kalau kamu buka halaman ini lagi.</span>
+      </label>
+    </div>
+
+    <div class="paper-card rounded-lg overflow-hidden flex flex-col" style="height: 60vh;">
+      <div class="accent-line"></div>
+
+      <div id="chat-scroll" class="flex-1 overflow-y-auto p-4 space-y-3">
+        <div class="bubble-system text-center text-xs py-2">
+          Mulai percakapan dengan CS bot di bawah 👋
+        </div>
+      </div>
+
+      <div id="typing-indicator" class="px-4 pb-2 hidden">
+        <div class="bubble-bot inline-flex items-center gap-1 px-3 py-2 text-sm">
+          <span class="typing-dot">●</span><span class="typing-dot">●</span><span class="typing-dot">●</span>
+        </div>
+      </div>
+
+      <form id="chat-form" class="border-t border-[#E4DEEC] p-3 flex gap-2">
+        <input type="text" id="chat-input" placeholder="Tulis pertanyaan kamu..." required autocomplete="off"
+          class="flex-1 rounded-md border border-[#E4DEEC] px-3 py-2 text-sm bg-white focus:border-[#6E4CAE]" />
+        <button type="submit" id="send-btn"
+          class="bg-[#6E4CAE] hover:bg-[#5B3E92] text-white text-sm font-medium rounded-md px-4 py-2 transition-colors whitespace-nowrap">
+          Kirim
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- template bubble pesan, dipakai lewat JS -->
+  <template id="bubble-template">
+    <div class="flex pop-in">
+      <div class="bubble max-w-[80%] px-3 py-2 text-sm break-words"></div>
+    </div>
+  </template>
+
+  <script src="/js/chat.js"></script>
+</body>
+</html>
